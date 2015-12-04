@@ -1,3 +1,3 @@
 # Introduction
 
-This document is dtab.io web app User Guide. 
+The following document is the user guide for dtab.io web app.
