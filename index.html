@@ -57,7 +57,7 @@
         
           <h1 id="introduction">Introduction</h1>
 
-<p>This document is dtab.io web app User Guide. </p>
+<p>The following document is the user guide for dtab.io web app.</p>
 
           <h1 id="home">Home</h1>
 
@@ -67,13 +67,122 @@
 
           <h1 id="sheet">Sheet</h1>
 
+<p>A Dtab spreadsheet or sheet is basically a spreadsheet that allows users to write pseudo javascripts and apply them to target cells or ranges.</p>
+
 <h2 id="grid">Grid</h2>
+
+<p>A sheet grid contains columns and rows. Each column can have labels from A to Z, and each row can </p>
 
 <h2 id="notebook">Notebook</h2>
 
+<p>A Dtab notebook consists of multiple notes. A note can be a javascript, mardown, or html note. Upon loading sheet, all notes will be loaded based on note orders.</p>
+
+<h3 id="note-view">Note view</h3>
+
+<p>A note has 3 different sections:</p>
+
+<ul>
+<li>Tag - is usually hidden and only shown when note is in hidden mode</li>
+<li>Content - contains content for edit that includes javascript code, mardown code, or html code</li>
+<li>Result - contains charts for a javascript note; contains html note view for markdown and html codes</li>
+</ul>
+
+<p>Besides the above sections, a note has 2 other button options: </p>
+
+<ul>
+<li>Note type - allows changing note type</li>
+<li>Options - allows moving a note within the notebook, add before/after, execute or remove a note</li>
+</ul>
+
+<h3 id="shortcuts">Shortcuts</h3>
+
+<p>Shortcuts are recommended to use while editing notes since it gives users a great flexibility moving around different block notes. </p>
+
+<ul>
+<li>Cmd + Enter - execute code</li>
+<li>Ctrl + Enter - execute current note and move down the next one. If the next one does not exist, create a new one</li>
+<li>Ctrl + Shift + Enter - execute current note and move up the previous note. If it reaches the top, it will stay with the current note</li>
+</ul>
+
 <h2 id="charting">Charting</h2>
 
+<p>This app has a chart wrapper built on top of Highcharts to make charts easier to use with the grid data. The following charts are supported</p>
+
+<ul>
+<li>Line, multi-line</li>
+<li>Bar, multi-bar</li>
+<li>Area, multi-area</li>
+<li>Stacked-area</li>
+<li>Pie</li>
+</ul>
+
+<h3 id="usage">Usage</h3>
+
+<p>All charts are part of Charts class. A chart call requires at least one or multiple data range(s) string, and an optional options.</p>
+
+<p>Data range has the format &lsquo;Cell0:Cell1&rsquo;. Mutiple data ranges are separated using commas. For example:</p>
+
+<ul>
+<li>&#39;A1:C5&rsquo; - single data range presents the data block from top left cell A1 and bottom right cell C5. </li>
+<li>&#39;A1:C5,A3:C7,B7:E11&rsquo; - multiple data ranges present data from multiple blocks. Blocks can overlap or repeat itself for multiple datasets. </li>
+</ul>
+
+<p>&#39;options&rsquo; variable contains the following attributes:</p>
+
+<ul>
+<li>el - target element for drawing, this can be a floating element on grid. Without defining this, chart will be drawn below the javascript note.</li>
+<li>labels - a string or array of string contains labels for top, left, bottom labels accordingly. A single string is used as top label</li>
+<li>names - a string or array of string contains names for dataset series. A single string is used as the name for all datasets.</li>
+<li>xAxis - a string or array of string contains name of xAxis column name. A single string is used as the name for all dataset xAxis.</li>
+<li>yAxis - a string or array of string contains name of yAxis column name. A single string is used as the name for all dataset yAxis.</li>
+<li>showLegend - boolean value for showing or hiding chart legend. By default, it is false for single dataset, and is true for multiple datasets.</li>
+</ul>
+
+<p>For Pie chart, xAxis is used as &#39;Categories&rsquo; column and yAxis is used as &#39;Values&rsquo; column. A pie chart only takes a single dataset.</p>
+
+<p>A complete example with multiple data ranges and options:</p>
+
+<p>options = {  </p>
+
+<p>}</p>
+
+<p>Charts.Bar(&ldquo;)</p>
+
+<h3 id="drawing-on-grid">Drawing on grid</h3>
+
+<p>A chart can be drawn directly on the sheet grid. Use first initialize a chart block element on the grid and then use this element for charting. For example:</p>
+
+<h2 id="util-functions">Util functions</h2>
+
+<ul>
+<li>dtab.getRange(rangeString, callback)</li>
+</ul>
+
 <h2 id="settings">Settings</h2>
+
+<p>A sheet can have different settings.</p>
+
+<h3 id="external-libraries">External Libraries</h3>
+
+<p>This allows loading external javascript libraries before loading the sheet grid data.</p>
+
+<h3 id="privacy">Privacy</h3>
+
+<p>A sheet can have the following type of privacy:</p>
+
+<ul>
+<li>Private - completely private to owner and shared users only</li>
+<li>Unlisted - publically available but hidden from search</li>
+<li>Public - publically available and shown from search</li>
+</ul>
+
+<h3 id="tags">Tags</h3>
+
+<p>Tags are useful feature that allows users to find related sheets. A publically shared sheet should have tags.</p>
+
+<h3 id="description">Description</h3>
+
+<p>This describes the sheet data and anything related to the sheet.</p>
 
           <h1 id="additional-resources">Additional Resources</h1>
 
@@ -83,20 +192,19 @@
 
 <ul>
 <li>Send an email to contact@dtab.io</li>
-<li>Send a UserVoice request using the bottom right question mark</li>
 </ul>
 
 <h2 id="tutorials-and-videos">Tutorials and videos</h2>
 
-<p><a href="https://www.youtube.com/watch?v=xMSykYiq3SY" target="_blank"> D3.js Tutorial 1: Append </a></p>
-
-<p><a href="https://www.youtube.com/watch?v=S37FZDH7VMo" target="_blank"> D3.js Tutorial 2: Select </a></p>
-
-<p><a href="https://www.youtube.com/channel/UCtswXB4Tz_S4vb57fBAQhmg" target="_blank"> View and Subscribe </a></p>
-
-<p><a href="http://nbviewer.ipython.org/github/dtablab/dtab-notebook/blob/master/visualizations.ipynb" target="_blank"> Data Visualizations for IPython Notebooks</a></p>
-
           <h1 id="faqs">FAQs</h1>
+
+<h2 id="how-large-a-sheet-can-be">How large a sheet can be?</h2>
+
+<p>This app supports a maximum of 100,000 rows and 1,000,000 cells.</p>
+
+<h2 id="can-i-use-other-highcharts-besides-built-in-one">Can I use other Highcharts besides built in one?</h2>
+
+<p>Yes, you can. We recomment to use &lsquo;dtab.getRange&rsquo; and some underscore util functions to manipulate data to conform to Highcharts&rsquo; formats.</p>
 
       </div>
     </div>
