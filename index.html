@@ -49,7 +49,7 @@
       </div>
         <ul class="toc-footer">
             <li><a href='https://dtab.io' target="_blank">dtab.io</a></li>
-            <li>Last updated 12/15/2015</li>
+            <li>Last updated 01/09/2016</li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -61,110 +61,225 @@
 
           <h1 id="home">Home</h1>
 
+<p><a href="images/home/home.png" data-lightbox="home-screen" data-title="Home" style="display: block; float:right;">
+  <img title="Home After Login" alt="alt text" src="images/home/home.png" />
+</a></p>
+
+<p>After login, the app shows a home console with the following sections:</p>
+
+<ul>
+<li>Top section - header</li>
+<li>Left section - sheets, profile, and other menus.</li>
+<li>Right section - sheet list or menu detail.</li>
+</ul>
+
 <h2 id="sheets">Sheets</h2>
+
+<p><a href="images/home/sheets.png" data-lightbox="home-screen" data-title="Sheets" style="display: block; float:right;">
+  <img title="Sheets" alt="alt text" src="images/home/sheets.png" />
+</a></p>
+
+<p>Sheets menu contains all the user&rsquo;s owned sheets. It also has some additional options for managing sheets.</p>
+
+<p><em>New Sheet</em> button is used to create new sheet.</p>
 
 <h2 id="profile">Profile</h2>
 
+<p><a href="images/home/profile.png" data-lightbox="home-screen" data-title="Profile" style="display: block; float:right;">
+  <img title="Profile" alt="alt text" src="images/home/profile.png" />
+</a></p>
+
+<p>Profile menu contains user&rsquo;s detailed information including subscription information.</p>
+
           <h1 id="sheet">Sheet</h1>
 
-<p>A Dtab spreadsheet or sheet is basically a spreadsheet that allows users to write pseudo javascripts and apply them to target cells or ranges.</p>
+<p>A Dtab spreadsheet or sheet is basically a spreadsheet that allows users to write javascripts and apply them to target cells or ranges.
+It has two (2) most important sections upon opening a sheet:</p>
+
+<ul>
+<li>Grid - sheet cell data.</li>
+<li>Notebook - sheet notes.</li>
+</ul>
 
 <h2 id="grid">Grid</h2>
 
-<p>A sheet grid contains columns and rows. Each column can have labels from A to Z, and each row can </p>
+<p>A grid contains many columns and rows. Each column can have labels from A to Z, and each row has a numeric index number.
+Within the grid are the cells. Each cell can contain either text, number, formula, or function. 
+A formula or a function within the cell starts with <em>=</em> sign. </p>
+
+<p>A javascript function call is possible within this app. </p>
+
+<p>If the following method is defined, a cell with the content <em>= foo()</em> will have the value <em>Hello World</em>.</p>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="s1">'Hello World'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
 <h2 id="notebook">Notebook</h2>
 
-<p>A Dtab notebook consists of multiple notes. A note can be a javascript, mardown, or html note. Upon loading sheet, all notes will be loaded based on note orders.</p>
+<p>A notebook consists of multiple notes. 
+Upon loading a sheet, all notes will be loaded based on the notes&rsquo; orders.</p>
 
-<h3 id="note-view">Note view</h3>
+<h3 id="note">Note</h3>
 
 <p>A note has 3 different sections:</p>
 
 <ul>
-<li>Tag - is usually hidden and only shown when note is in hidden mode</li>
-<li>Content - contains content for edit that includes javascript code, mardown code, or html code</li>
-<li>Result - contains charts for a javascript note; contains html note view for markdown and html codes</li>
+<li>Tag - usually hidden for normal mode, and shown when a note is in hidden mode.</li>
+<li>Content - javascript code, mardown code, or html code.</li>
+<li>Result - charts and related info for javascript note; html code for html/markdown note.</li>
 </ul>
 
-<p>Besides the above sections, a note has 2 other button options: </p>
+<p>Besides the above sections, a note has 2 other buttons resided top right corner: note type and options</p>
+
+<p><em>Note type</em> defines the note type. It has one of the following types:</p>
 
 <ul>
-<li>Note type - allows changing note type</li>
-<li>Options - allows moving a note within the notebook, add before/after, execute or remove a note</li>
+<li>Javascript - javascript code.</li>
+<li>Mardown - mardown code.</li>
+<li>Html - HTML code.</li>
 </ul>
+
+<p>Markdown and HTML translated code will be updated live while typing.</p>
+
+<p><em>Options</em> button provide additional note options as followed:</p>
+
+<ul>
+<li>Move up - move note order 1 level up.</li>
+<li>Move down - move note order 1 level down.</li>
+<li>Add before - add a blank note before the current note.</li>
+<li>Add after - add a blank note after the current note.</li>
+<li>Run - play/re-play the current note.</li>
+<li>Hide - hide note. A hidden note will only have its tag shown, its content will be hidden.</li>
+<li>Delete - remove note permanently. A prompt will appear if a note has more than 3 lines.</li>
+</ul>
+
+<p>Current note is the note that is being focused. Clicking away from the current note will replay its content.</p>
 
 <h3 id="shortcuts">Shortcuts</h3>
 
-<p>Shortcuts are recommended to use while editing notes since it gives users a great flexibility moving around different block notes. </p>
+<p>Shortcuts are recommended to use while editing notes since it provides great flexibility for moving between different notes. </p>
 
 <ul>
-<li>Cmd + Enter - execute code</li>
-<li>Ctrl + Enter - execute current note and move down the next one. If the next one does not exist, create a new one</li>
+<li>Cmd + Enter - execute code (Windows&rsquo; users can use Alt key instead)</li>
+<li>Ctrl + Enter - execute current note and move down the next one. If the next one does not exist, this will create a new note after the the current one.</li>
 <li>Ctrl + Shift + Enter - execute current note and move up the previous note. If it reaches the top, it will stay with the current note</li>
 </ul>
 
 <h2 id="charting">Charting</h2>
 
-<p>This app has a chart wrapper built on top of Highcharts to make charts easier to use with the grid data. The following charts are supported</p>
+<p>Charting is a unique and important feature in this app. There&rsquo;s a built-in wrapper on top of Highcharts that make charting quick and easy.
+The following charts are supported:</p>
 
 <ul>
-<li>Line, multi-line</li>
-<li>Bar, multi-bar</li>
-<li>Area, multi-area</li>
-<li>Stacked-area</li>
-<li>Pie</li>
+<li>Line, multi-line (Charts.Line)</li>
+<li>Bar, multi-bar (Charts.Bar)</li>
+<li>Area, multi-area (Charts.Area)</li>
+<li>Stacked-area (Charts.StackedArea)</li>
+<li>Pie (Charts.Pie)</li>
 </ul>
 
-<h3 id="usage">Usage</h3>
+<p>A detailed example can be accessed 
+<a href="https://dtab.io/sheets/568f61ac6e8ca271338363eb" target="_blank"> here </a>.</p>
 
-<p>All charts are part of Charts class. A chart call requires at least one or multiple data range(s) string, and an optional options.</p>
+<h3 id="syntax-amp-usage">Syntax &amp; Usage</h3>
 
-<p>Data range has the format &lsquo;Cell0:Cell1&rsquo;. Mutiple data ranges are separated using commas. For example:</p>
+<p>Syntax: Charts.ChartType( dataRange, options )</p>
+
+<p>All charts are part of <em>Charts</em> class. A chart call requires a data range string and an optional options.
+Multiple ranges can be specified within the same string using commas. For example:</p>
+
+<p><em>dataRange</em> can be one of the following formats:</p>
 
 <ul>
-<li>&#39;A1:C5&rsquo; - single data range presents the data block from top left cell A1 and bottom right cell C5. </li>
-<li>&#39;A1:C5,A3:C7,B7:E11&rsquo; - multiple data ranges present data from multiple blocks. Blocks can overlap or repeat itself for multiple datasets. </li>
+<li>&lsquo;A1:C10&rsquo; - single data range presents the data block from top left cell A1 and bottom right cell C10. </li>
+<li>&#39;A1:C10,A3:C7,B7:E11&rsquo; - multiple data ranges present data from multiple blocks. Blocks can overlap or repeat itself for multiple datasets. </li>
 </ul>
 
-<p>&#39;options&rsquo; variable contains the following attributes:</p>
+<p><em>options</em> object variable contains has following optional attributes:</p>
 
 <ul>
-<li>el - target element for drawing, this can be a floating element on grid. Without defining this, chart will be drawn below the javascript note.</li>
-<li>labels - a string or array of string contains labels for top, left, bottom labels accordingly. A single string is used as top label</li>
-<li>names - a string or array of string contains names for dataset series. A single string is used as the name for all datasets.</li>
-<li>xAxis - a string or array of string contains name of xAxis column name. A single string is used as the name for all dataset xAxis.</li>
-<li>yAxis - a string or array of string contains name of yAxis column name. A single string is used as the name for all dataset yAxis.</li>
+<li>el - target element for drawing, this can be a floating element on grid. Without defining this, chart will be drawn below the note.</li>
+<li>label - array of label strings for top, left, and bottom. A single label string is used as top label</li>
+<li>name - array of strings for dataset series. If a string is specified, the same name will be applied for all series.</li>
+<li>xAxis - array of strings for xAxises&rsquo; column names. If a string is specified, the name will be applied for all datasets&rsquo; xAxises.</li>
+<li>yAxis - a string or array of string contains name of yAxis column name. If a single string is specified, the name will be applied for all datasets&rsquo; yAxises.</li>
 <li>showLegend - boolean value for showing or hiding chart legend. By default, it is false for single dataset, and is true for multiple datasets.</li>
 </ul>
 
+<p>xAxis &amp; yAxis must contain the exact column strings. Any extra spaces in the name will be consider as different column. 
+If xAxis and yAxis are not spicified, the 1st column and 2nd column will be chosen fir the axises accordingly .</p>
+
 <p>For Pie chart, xAxis is used as &#39;Categories&rsquo; column and yAxis is used as &#39;Values&rsquo; column. A pie chart only takes a single dataset.</p>
 
-<p>A complete example with multiple data ranges and options:</p>
+<p>Example of a simple chart call:</p>
+<pre class="highlight javascript"><code><span class="nx">Charts</span><span class="p">.</span><span class="nx">Bar</span><span class="p">(</span><span class="s1">'A1:H7'</span><span class="p">);</span>
+</code></pre>
 
-<p>options = {  </p>
+<h3 id="drawing-multi-dataset-charts">Drawing multi-dataset charts</h3>
 
-<p>}</p>
-
-<p>Charts.Bar(&ldquo;)</p>
+<p>Drawing multi-dataset charts is possible by specifying mutiple data ranges or axises. 
+If all datasets share the same data range block, a single data range can used concurrently with multiple xAxises and yAxises.</p>
 
 <h3 id="drawing-on-grid">Drawing on grid</h3>
 
-<p>A chart can be drawn directly on the sheet grid. Use first initialize a chart block element on the grid and then use this element for charting. For example:</p>
+<p>A chart can be drawn directly on the sheet grid. 
+A GridView element needs to be first initialized using <em>Dtab.GridView</em> class constructor. It has the following optional attributes:</p>
+
+<ul>
+<li>id - charting element (div) id (without &rsquo;#&rsquo;).</li>
+<li>pos - x and y position object relative to the grid for the element, <em>{x:0, y:0}</em> as default.</li>
+<li>css - the element styles. An element has a default 500px width and 250px height.</li>
+<li>className - additional class names for the element.</li>
+<li>draggable - allow dragging, <em>true</em> as default.</li>
+<li>clear - clear element on play, <em>true</em> as default.</li>
+</ul>
+
+<h3 id="full-example">Full example</h3>
+
+<p>The following is a full example of multi-bar chart extracted from the example above:</p>
+<pre class="highlight javascript"><code><span class="nx">el</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dtab</span><span class="p">.</span><span class="nx">GridView</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'chart'</span><span class="p">,</span> 
+  <span class="na">className</span><span class="p">:</span> <span class="s1">'bar-chart'</span><span class="p">,</span>
+  <span class="na">pos</span><span class="p">:</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">},</span> 
+  <span class="na">css</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">510</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">280</span><span class="p">},</span>
+  <span class="na">draggable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">clear</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+
+<span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">el</span><span class="p">:</span> <span class="nx">el</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="p">[</span><span class="s2">"&lt; 5"</span><span class="p">,</span> <span class="s2">"5-13"</span><span class="p">,</span><span class="s2">"14-17"</span><span class="p">,</span><span class="s2">"18-24"</span><span class="p">,</span><span class="s2">"25-44"</span><span class="p">,</span><span class="s2">"45-64"</span><span class="p">,</span><span class="s2">"65+"</span><span class="p">],</span>
+  <span class="na">label</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Multi-bar chart"</span><span class="p">,</span> <span class="s2">"xAxis label"</span><span class="p">,</span> <span class="s1">'yAxis label'</span><span class="p">],</span>
+  <span class="na">xAxis</span><span class="p">:</span> <span class="s2">"State"</span><span class="p">,</span>
+  <span class="na">yAxis</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Under 5 Years"</span><span class="p">,</span><span class="s2">"14 to 17 Years"</span><span class="p">,</span><span class="s2">"18 to 24 Years"</span><span class="p">,</span><span class="s2">"25 to 44 Years"</span><span class="p">,</span><span class="s2">"45 to 64 Years"</span><span class="p">,</span><span class="s2">"65 Years and Over"</span><span class="p">],</span>
+  <span class="na">showLegend</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">};</span>
+
+<span class="nx">Charts</span><span class="p">.</span><span class="nx">Bar</span><span class="p">(</span><span class="s1">'A1:H7'</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre>
 
 <h2 id="util-functions">Util functions</h2>
 
+<p>This app doesn&rsquo;t limit one&rsquo;s ability to perform any further complex charting functions. 
+Users can use any external chart libraries instead of the above charting wrapper. 
+The following functions can be useful for this purpose:</p>
+
 <ul>
-<li>dtab.getRange(rangeString, callback)</li>
+<li>dtab.getRange( dataRangeString, callback ) - get data ranges in JSON format. This can be multiple comma separated ranges.</li>
+<li>dtab.getNoteView() - the note chart view element. This element is placed right below the note.</li>
+<li>Dtab.GridView() - the constructore for initializing an element on the grid.</li>
 </ul>
 
 <h2 id="settings">Settings</h2>
 
-<p>A sheet can have different settings.</p>
+<p>Sheet settings are important to a particular sheet. All settings are placed under <em>Settings</em> tab.
+This tab allow users to control external libraries, tags, privacy, and more.</p>
 
 <h3 id="external-libraries">External Libraries</h3>
 
-<p>This allows loading external javascript libraries before loading the sheet grid data.</p>
+<p>This gives the ability to load external javascript libraries before loading the sheet grid data. 
+External function calls can be used directly in the grid cells or within the javascript notes. </p>
 
 <h3 id="privacy">Privacy</h3>
 
@@ -178,23 +293,22 @@
 
 <h3 id="tags">Tags</h3>
 
-<p>Tags are useful feature that allows users to find related sheets. A publically shared sheet should have tags.</p>
+<p>Tags are useful feature that allows users to find related sheets within similar categories. A publically shared sheet should have tags.</p>
 
 <h3 id="description">Description</h3>
 
-<p>This describes the sheet data and anything related to the sheet.</p>
+<p>This describes the sheet data and anything related to the sheet. 
+It&rsquo;s a good idea to provide sheet description for any publically exposed sheets. This would help the search engine to find the best fit sheet within the system.</p>
 
           <h1 id="additional-resources">Additional Resources</h1>
 
 <h2 id="support">Support</h2>
 
-<p>Users can contact and get help immediately by:</p>
-
-<ul>
-<li>Send an email to contact@dtab.io</li>
-</ul>
+<p>For immediate help or feedback, please send an email to contact@dtab.io.</p>
 
 <h2 id="tutorials-and-videos">Tutorials and videos</h2>
+
+<p>(Work in progress)</p>
 
           <h1 id="faqs">FAQs</h1>
 
