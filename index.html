@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>dtab.io Web App User Guide</title>
+    <title>nxsheet.com Web App User Guide</title>
 
     <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
@@ -48,7 +48,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='https://dtab.io' target="_blank">dtab.io</a></li>
+            <li><a href='https://nxsheet.com' target="_blank">nxsheet.com</a></li>
             <li>Last updated 01/09/2016</li>
         </ul>
     </div>
@@ -57,7 +57,7 @@
         
           <h1 id="introduction">Introduction</h1>
 
-<p>The following document is the user guide for dtab.io web app.</p>
+<p>The following document is the user guide for nxsheet.com web app.</p>
 
           <h1 id="home">Home</h1>
 
@@ -104,10 +104,10 @@ It has two (2) most important sections upon opening a sheet:</p>
 <h2 id="grid">Grid</h2>
 
 <p>A grid contains many columns and rows. Each column can have labels from A to Z, and each row has a numeric index number.
-Within the grid are the cells. Each cell can contain either text, number, formula, or function. 
-A formula or a function within the cell starts with <em>=</em> sign. </p>
+Within the grid are the cells. Each cell can contain either text, number, formula, or function.
+A formula or a function within the cell starts with <em>=</em> sign.</p>
 
-<p>A javascript function call is possible within this app. </p>
+<p>A javascript function call is possible within this app.</p>
 
 <p>If the following method is defined, a cell with the content <em>= foo()</em> will have the value <em>Hello World</em>.</p>
 <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
@@ -117,7 +117,7 @@ A formula or a function within the cell starts with <em>=</em> sign. </p>
 
 <h2 id="notebook">Notebook</h2>
 
-<p>A notebook consists of multiple notes. 
+<p>A notebook consists of multiple notes.
 Upon loading a sheet, all notes will be loaded based on the notes&rsquo; orders.</p>
 
 <h3 id="note">Note</h3>
@@ -158,7 +158,7 @@ Upon loading a sheet, all notes will be loaded based on the notes&rsquo; orders.
 
 <h3 id="shortcuts">Shortcuts</h3>
 
-<p>Shortcuts are recommended to use while editing notes since it provides great flexibility for moving between different notes. </p>
+<p>Shortcuts are recommended to use while editing notes since it provides great flexibility for moving between different notes.</p>
 
 <ul>
 <li>Cmd + Enter - execute code (Windows&rsquo; users can use Alt key instead)</li>
@@ -179,8 +179,8 @@ The following charts are supported:</p>
 <li>Pie (Charts.Pie)</li>
 </ul>
 
-<p>A detailed example can be accessed 
-<a href="https://dtab.io/sheets/568f61ac6e8ca271338363eb" target="_blank"> here </a>.</p>
+<p>A detailed example can be accessed
+<a href="https://nxsheet.com/sheets/568f61ac6e8ca271338363eb" target="_blank"> here </a>.</p>
 
 <h3 id="syntax-amp-usage">Syntax &amp; Usage</h3>
 
@@ -192,8 +192,8 @@ Multiple ranges can be specified within the same string using commas. For exampl
 <p><em>dataRange</em> can be one of the following formats:</p>
 
 <ul>
-<li>&lsquo;A1:C10&rsquo; - single data range presents the data block from top left cell A1 and bottom right cell C10. </li>
-<li>&#39;A1:C10,A3:C7,B7:E11&rsquo; - multiple data ranges present data from multiple blocks. Blocks can overlap or repeat itself for multiple datasets. </li>
+<li>&lsquo;A1:C10&rsquo; - single data range presents the data block from top left cell A1 and bottom right cell C10.</li>
+<li>&#39;A1:C10,A3:C7,B7:E11&rsquo; - multiple data ranges present data from multiple blocks. Blocks can overlap or repeat itself for multiple datasets.</li>
 </ul>
 
 <p><em>options</em> object variable contains has following optional attributes:</p>
@@ -207,7 +207,7 @@ Multiple ranges can be specified within the same string using commas. For exampl
 <li>showLegend - boolean value for showing or hiding chart legend. By default, it is false for single dataset, and is true for multiple datasets.</li>
 </ul>
 
-<p>xAxis &amp; yAxis must contain the exact column strings. Any extra spaces in the name will be consider as different column. 
+<p>xAxis &amp; yAxis must contain the exact column strings. Any extra spaces in the name will be consider as different column.
 If xAxis and yAxis are not spicified, the 1st column and 2nd column will be chosen fir the axises accordingly .</p>
 
 <p>For Pie chart, xAxis is used as &#39;Categories&rsquo; column and yAxis is used as &#39;Values&rsquo; column. A pie chart only takes a single dataset.</p>
@@ -218,12 +218,12 @@ If xAxis and yAxis are not spicified, the 1st column and 2nd column will be chos
 
 <h3 id="drawing-multi-dataset-charts">Drawing multi-dataset charts</h3>
 
-<p>Drawing multi-dataset charts is possible by specifying mutiple data ranges or axises. 
+<p>Drawing multi-dataset charts is possible by specifying mutiple data ranges or axises.
 If all datasets share the same data range block, a single data range can used concurrently with multiple xAxises and yAxises.</p>
 
 <h3 id="drawing-on-grid">Drawing on grid</h3>
 
-<p>A chart can be drawn directly on the sheet grid. 
+<p>A chart can be drawn directly on the sheet grid.
 A GridView element needs to be first initialized using <em>Dtab.GridView</em> class constructor. It has the following optional attributes:</p>
 
 <ul>
@@ -239,9 +239,9 @@ A GridView element needs to be first initialized using <em>Dtab.GridView</em> cl
 
 <p>The following is a full example of multi-bar chart extracted from the example above:</p>
 <pre class="highlight javascript"><code><span class="nx">el</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dtab</span><span class="p">.</span><span class="nx">GridView</span><span class="p">({</span>
-  <span class="na">id</span><span class="p">:</span> <span class="s1">'chart'</span><span class="p">,</span> 
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'chart'</span><span class="p">,</span>
   <span class="na">className</span><span class="p">:</span> <span class="s1">'bar-chart'</span><span class="p">,</span>
-  <span class="na">pos</span><span class="p">:</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">},</span> 
+  <span class="na">pos</span><span class="p">:</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">},</span>
   <span class="na">css</span><span class="p">:</span> <span class="p">{</span><span class="na">width</span><span class="p">:</span> <span class="mi">510</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">280</span><span class="p">},</span>
   <span class="na">draggable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="na">clear</span><span class="p">:</span> <span class="kc">true</span>
@@ -261,8 +261,8 @@ A GridView element needs to be first initialized using <em>Dtab.GridView</em> cl
 
 <h2 id="util-functions">Util functions</h2>
 
-<p>This app doesn&rsquo;t limit one&rsquo;s ability to perform any further complex charting functions. 
-Users can use any external chart libraries instead of the above charting wrapper. 
+<p>This app doesn&rsquo;t limit one&rsquo;s ability to perform any further complex charting functions.
+Users can use any external chart libraries instead of the above charting wrapper.
 The following functions can be useful for this purpose:</p>
 
 <ul>
@@ -278,8 +278,8 @@ This tab allow users to control external libraries, tags, privacy, and more.</p>
 
 <h3 id="external-libraries">External Libraries</h3>
 
-<p>This gives the ability to load external javascript libraries before loading the sheet grid data. 
-External function calls can be used directly in the grid cells or within the javascript notes. </p>
+<p>This gives the ability to load external javascript libraries before loading the sheet grid data.
+External function calls can be used directly in the grid cells or within the javascript notes.</p>
 
 <h3 id="privacy">Privacy</h3>
 
@@ -297,14 +297,14 @@ External function calls can be used directly in the grid cells or within the jav
 
 <h3 id="description">Description</h3>
 
-<p>This describes the sheet data and anything related to the sheet. 
+<p>This describes the sheet data and anything related to the sheet.
 It&rsquo;s a good idea to provide sheet description for any publically exposed sheets. This would help the search engine to find the best fit sheet within the system.</p>
 
           <h1 id="additional-resources">Additional Resources</h1>
 
 <h2 id="support">Support</h2>
 
-<p>For immediate help or feedback, please send an email to contact@dtab.io.</p>
+<p>For immediate help or feedback, please send an email to contact@nxsheet.com.</p>
 
 <h2 id="tutorials-and-videos">Tutorials and videos</h2>
 
