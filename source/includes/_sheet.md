@@ -1,6 +1,6 @@
 # Sheet
 
-A Dtab spreadsheet or sheet is basically a spreadsheet that allows users to write javascripts and apply them to target cells or ranges.
+A NxSheet spreadsheet or sheet is basically a spreadsheet that allows users to write javascripts and apply them to target cells or ranges.
 It has two (2) most important sections upon opening a sheet:
 
 * Grid - sheet cell data.
@@ -119,7 +119,7 @@ If all datasets share the same data range block, a single data range can used co
 ### Drawing on grid
 
 A chart can be drawn directly on the sheet grid.
-A GridView element needs to be first initialized using *Dtab.GridView* class constructor. It has the following optional attributes:
+A GridView element needs to be first initialized using *NxSheet.GridView* class constructor. It has the following optional attributes:
 
 * id - charting element (div) id (without '#').
 * pos - x and y position object relative to the grid for the element, *{x:0, y:0}* as default.
@@ -133,7 +133,7 @@ A GridView element needs to be first initialized using *Dtab.GridView* class con
 The following is a full example of multi-bar chart extracted from the example above:
 
 ```javascript
-el = new Dtab.GridView({
+el = new NxSheet.GridView({
   id: 'chart',
   className: 'bar-chart',
   pos: {x: 20, y: 200},
@@ -160,9 +160,9 @@ This app doesn't limit one's ability to perform any further complex charting fun
 Users can use any external chart libraries instead of the above charting wrapper.
 The following functions can be useful for this purpose:
 
-* dtab.getRange( dataRangeString, callback ) - get data ranges in JSON format. This can be multiple comma separated ranges.
-* dtab.getNoteView() - the note chart view element. This element is placed right below the note.
-* Dtab.GridView() - the constructore for initializing an element on the grid.
+* NxSheet.getRange( dataRangeString, callback ) - get data ranges in JSON format. This can be multiple comma separated ranges.
+* NxSheet.getNoteView() - the note chart view element. This element is placed right below the note.
+* NxSheet.GridView() - the constructore for initializing an element on the grid.
 
 ## Settings
 
