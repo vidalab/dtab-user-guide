@@ -160,8 +160,8 @@ This app doesn't limit one's ability to perform any further complex charting fun
 Users can use any external chart libraries instead of the above charting wrapper.
 The following functions can be useful for this purpose:
 
-* NxSheet.getRange( dataRangeString, callback ) - get data ranges in JSON format. This can be multiple comma separated ranges.
-* NxSheet.getNoteView() - the note chart view element. This element is placed right below the note.
+* nxsheet.getRange( dataRangeString, callback ) - get data ranges in JSON format. This can be multiple comma separated ranges.
+* nxsheet.getNoteView() - the note chart view element. This element is placed right below the note.
 * NxSheet.GridView() - the constructore for initializing an element on the grid.
 
 ## Settings
